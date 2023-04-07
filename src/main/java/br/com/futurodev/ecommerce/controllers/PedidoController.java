@@ -20,6 +20,11 @@ public class PedidoController {
         return pedidoService.buscarTodos();
     }
 
+    @GetMapping("/busca")
+    public List<Pedido> getBusca(String cliente, String nomeProduto, Integer qtd1, Integer qtd2) {
+        return pedidoService.busca(cliente, nomeProduto, qtd1, qtd2);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<?> getId(@PathVariable Long id) {
         try {
